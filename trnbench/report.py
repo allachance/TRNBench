@@ -101,7 +101,7 @@ def print_readme_rows(rows: list[dict]) -> None:
     """Print one README results row per deck, with an average time cell for each batch size in `COUNTS`."""
     cells: dict[str, dict[int, str]] = {}
     for row in summarize(rows):
-        cell = "failed" if row["avg_s"] is None else f"{row['avg_s']:.2f}"
+        cell = "failed" if row["avg_s"] is None else f"{row['avg_s']:.2f} s"
         cells.setdefault(row["deck"], {})[row["n"]] = cell
     for deck, by_n in cells.items():
         machine = f"| {rows[0]['cpu']} | {rows[0]['cores']}/{rows[0]['threads']} |"

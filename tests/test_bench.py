@@ -47,7 +47,7 @@ def test_readme_rows_have_a_cell_per_count():
     out = io.StringIO()
     with contextlib.redirect_stdout(out):
         print_readme_rows(rows)
-    assert out.getvalue() == "\n### fast\n\n| CPU X | 4 | 8 | 1.50 | failed |  |  |  |  |  |\n"
+    assert out.getvalue() == "\n### fast\n\n| CPU X | 4/8 | 1.50 s | failed |  |  |  |  |  |\n"
     with contextlib.redirect_stdout(out):
         print_readme_rows([])  # A run with nothing recorded prints nothing instead of crashing.
 
