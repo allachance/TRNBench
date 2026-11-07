@@ -104,5 +104,5 @@ def print_readme_rows(rows: list[dict]) -> None:
         cell = "failed" if row["avg_s"] is None else f"{row['avg_s']:.2f}"
         cells.setdefault(row["deck"], {})[row["n"]] = cell
     for deck, by_n in cells.items():
-        machine = f"| {rows[0]['cpu']} | {rows[0]['cores']} | {rows[0]['threads']} |"
+        machine = f"| {rows[0]['cpu']} | {rows[0]['cores']}/{rows[0]['threads']} |"
         print(f"\n### {deck}\n\n{machine} {' | '.join(by_n.get(n, '') for n in COUNTS)} |")
