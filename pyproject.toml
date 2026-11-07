@@ -1,0 +1,31 @@
+[project]
+name = "trnbench"
+version = "0.1.0"
+description = "Compare how fast computers run batches of TRNSYS simulations"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "trnrun==0.9.2",
+]
+authors = [{ name = "Alex Lachance" }]
+license = "MIT"
+license-files = ["LICENSE"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering",
+    "Topic :: System :: Benchmark",
+]
+
+[project.scripts]
+trnbench = "trnbench.bench:cli"
+
+[build-system]
+requires = ["uv_build>=0.9.13,<0.10"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-root = ""
